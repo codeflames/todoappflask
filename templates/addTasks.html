@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+ <form method = "POST" action="/addTask">
+     <input  id = "task" type="text" name = "task"  autofocus placeholder = "add Task">
+     <input id = "submit" type="submit" value = "add task" disabled>
+ </form>
+<script>
+    document.querySelector("#task").onkeyup = function(){
+      if (document.querySelector("#task").value === ''){
+       document.querySelector("#submit").disabled = true;
+      }
+      else{
+       document.querySelector("#submit").disabled = false;
+      }
+    }
+</script>
+{% endblock %}
+
+
+

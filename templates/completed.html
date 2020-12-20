@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Completed Todos</h1>
+ <ul>
+    {% for todo in todos%}
+        {% if todo.complete == true %}
+            <li>
+                <h3>{{todo['title']}}</h3>
+                <div>
+                    <a href="/complete{{ todo.id }}">Redo task</a>
+                    <a href="/delete{{ todo.id }}">Delete task</a>
+            
+            </div>
+            </li>
+        {% endif %}
+    {% endfor %}
+ </ul>
+
+ <!-- <a href="/addTask"> Add new Todo</a>
+ <a href="/addTask"> Completed Todos</a> -->
+{% endblock %}
+
+
+
